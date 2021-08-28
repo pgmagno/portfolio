@@ -1,13 +1,13 @@
 :root {
-    --amaranth-purple: hsla(337, 91%, 38%, 1);
+    --amaranth-purple: hsla(337, 91%, 38%, 0.6);
     --jazzberry-jam: hsla(332, 72%, 36%, 1);
     --amaranth-m-p: hsla(324, 52%, 35%, 1);
     --palatinate-purple: hsla(302, 31%, 34%, 1);
     --cyber-grape: hsla(259, 24%, 40%, 1);
     --bdazzled-blue: hsla(218, 33%, 40%, 1);
     --sapphire-blue: hsla(202, 53%, 38%, 1);
-    --cg-blue: hsla(194, 75%, 36%, 1);
-    --blue-munsell: hsla(190, 100%, 34%, 1);
+    hhhhhhhhhhhhhh --cg-blue: hsla(194, 75%, 36%, 1);
+    --blue-munsell: hsla(190, 100%, 34%, 0.6);
 }
 
 html {
@@ -22,7 +22,7 @@ body {
 
 hr {
     margin: 0;
-    border: solid 1px #21252b;
+    border: solid 1px black;
 }
 
 .spacer {
@@ -68,10 +68,9 @@ hr {
     transition: 0.3s;
 }
 
-/* asdasd*/
 /* ////////////////////////////////////// WELCOME SECTION /////////////////////////////// */
 #welcome {
-    background-color: var(--bdazzled-blue);
+    background-color: #282c34;
 }
 
 .welcome {
@@ -99,7 +98,7 @@ h1 {
 .profile-img {
     width: 300px;
     border-radius: 50%;
-    border: solid 2px var(--blue-munsell);
+    border: solid 5px #04dac2;
 }
 
 #welcome p {
@@ -110,7 +109,7 @@ h1 {
 
 /* ///////////////////////////////////// PROJECTS SECTION ///////////////////////// */
 #projects {
-    background-color: #57002a;
+    background-color: #111525;
 }
 
 .projects-container {
@@ -122,6 +121,7 @@ h1 {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    transition: 0.5s;
 }
 
 .projects-container a {
@@ -139,28 +139,49 @@ h1 {
 }
 
 .pc1 {
-    background-image: url("./images/project 1.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 1.png");
     background-size: 400px;
     background-position: center;
+    transition: 0.5s;
+}
+
+.pc1:hover {
+    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 1.png");
+    transition: 0.5s;
 }
 
 .pc2 {
-    background-image: url("./images/project 2.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 2.png");
     background-size: 330px;
+}
+
+.pc2:hover {
+    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 2.png");
+    transition: 0.5s;
 }
 
 .pc3 {
     background-color: #011F3F;
-    background-image: url("./images/project 3.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 3.png");
     background-size: 330px;
     background-position: center;
     background-repeat: repeat-x;
 }
 
+.pc3:hover {
+    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 3.png");
+    transition: 0.5s;
+}
+
 .pc4 {
-    background-image: url("./images/project 4.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 4.png");
     background-size: 400px;
     background-position: center;
+}
+
+.pc4:hover {
+    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 4.png");
+    transition: 0.5s;
 }
 
 h2 {
@@ -169,8 +190,7 @@ h2 {
 }
 
 .desc {
-    background-color: var(--blue-munsell);
-    border-top: solid 1px;
+    background-color: var(--sapphire-blue);
     position: relative;
     top: 350px;
     display: flex;
@@ -184,7 +204,7 @@ h2 {
     justify-content: center;
     flex-direction: column;
     height: 100px;
-    background-color: var(--cyber-grape);
+    background-color: #181a1f;
     color: white;
     font-size: 16px;
     text-align: center;
@@ -208,4 +228,53 @@ h2 {
 .footer-link:hover {
     color: #04dac2;
     transition: 0.3s;
+}
+
+#contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #21252b;
+}
+
+#contact h2 {
+    font-size: 32px;
+}
+
+.btn {
+    width: 150px;
+    margin-top: 30px;
+    background: #04DAC2;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #000000;
+    font-family: Comfortaa;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.6s;
+}
+
+.btn:hover {
+    background: var(--cyber-grape);
+}
+
+@media (max-width: 1000px) {
+    .welcome, .projects-container {
+        height: auto;
+        width: 80%;
+        padding: 50px 0;
+    }
+
+    .welcome p h1 {
+        font-size: 16px;
+    }
+
+    #navbar a {
+        font-size: 1.5em;
+    }
 }
