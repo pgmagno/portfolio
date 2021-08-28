@@ -30,6 +30,7 @@ hr {
 }
 
 #navbar {
+    z-index: 3;
     position: fixed;
     background-color: var(--sapphire-blue);
     width: 100%;
@@ -99,11 +100,12 @@ h1 {
     width: 300px;
     border-radius: 50%;
     border: solid 5px #04dac2;
+    margin: 30px 0;
 }
 
 #welcome p {
     font-size: 20px;
-    text-align: justify;
+    text-align: center;
     line-height: 1.5;
 }
 
@@ -129,6 +131,10 @@ h1 {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     border: 2px solid #333333;
     margin: 30px;
     height: 400px;
@@ -136,51 +142,57 @@ h1 {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 2px 2px 10px #333333;
+    transition: width 1s, height 1s;
+}
+
+.project-card:hover {
+    width: 310px;
+    height: 410px;
 }
 
 .pc1 {
-    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 1.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), hsla(218, 33%, 40%, 0.5)), url("./images/project 1.png");
     background-size: 400px;
     background-position: center;
     transition: 0.5s;
 }
 
 .pc1:hover {
-    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 1.png");
+    background-image: linear-gradient(45deg, hsla(218, 33%, 40%, 0.5), var(--blue-munsell)), url("./images/project 1.png");
     transition: 0.5s;
 }
 
 .pc2 {
-    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 2.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), hsla(218, 33%, 40%, 0.5)), url("./images/project 2.png");
     background-size: 330px;
 }
 
 .pc2:hover {
-    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 2.png");
+    background-image: linear-gradient(45deg, hsla(218, 33%, 40%, 0.5), var(--blue-munsell)), url("./images/project 2.png");
     transition: 0.5s;
 }
 
 .pc3 {
     background-color: #011F3F;
-    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 3.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), hsla(218, 33%, 40%, 0.5)), url("./images/project 3.png");
     background-size: 330px;
     background-position: center;
     background-repeat: repeat-x;
 }
 
 .pc3:hover {
-    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 3.png");
+    background-image: linear-gradient(45deg, hsla(218, 33%, 40%, 0.5), var(--blue-munsell)), url("./images/project 3.png");
     transition: 0.5s;
 }
 
 .pc4 {
-    background-image: linear-gradient(45deg, var(--blue-munsell), var(--amaranth-purple)), url("./images/project 4.png");
+    background-image: linear-gradient(45deg, var(--blue-munsell), hsla(218, 33%, 40%, 0.5)), url("./images/project 4.png");
     background-size: 400px;
     background-position: center;
 }
 
 .pc4:hover {
-    background-image: linear-gradient(45deg, var(--amaranth-purple), var(--blue-munsell)), url("./images/project 4.png");
+    background-image: linear-gradient(45deg, hsla(218, 33%, 40%, 0.5), var(--blue-munsell)), url("./images/project 4.png");
     transition: 0.5s;
 }
 
@@ -192,11 +204,11 @@ h2 {
 .desc {
     background-color: var(--sapphire-blue);
     position: relative;
-    top: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
+    width: inherit;
 }
 
 .footer {
@@ -241,13 +253,11 @@ h2 {
 }
 
 .btn {
-    width: 150px;
     margin-top: 30px;
     background: #04DAC2;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     color: #000000;
+    box-shadow: 2px 2px 10px #333333;
     font-family: Comfortaa;
     font-size: 16px;
     font-weight: bold;
@@ -256,22 +266,78 @@ h2 {
     display: inline-block;
     cursor: pointer;
     text-align: center;
-    transition: background 0.6s;
+    transition: background 0.3s;
+}
+
+#header-burger {
+    width: 0;
+    height: 0;
+}
+
+.links-container2 {
+    display: none;
 }
 
 .btn:hover {
-    background: var(--cyber-grape);
+    background: #44ccC9;
 }
 
 @media (max-width: 1000px) {
     .welcome, .projects-container {
-        height: auto;
-        width: 80%;
-        padding: 50px 0;
+        width: 85%;
     }
 
-    .welcome p h1 {
-        font-size: 16px;
+    .links-container {
+        display: none;
+    }
+
+    .links-container2 {
+        z-index: 2;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 20px;
+        height: 140px;
+        top: 70px;
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--sapphire-blue);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hide {
+        height: 0px;
+    }
+
+    .welcome {
+        height: 100vh;
+    }
+
+    .projects-container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #header-burger {
+        z-index: 4;
+        display: block;
+        width: 50px;
+        height: auto;
+        padding-right: 15px;
+    }
+
+    .profile-img {
+        width: 200px;
+    }
+
+    #welcome p {
+        font-size: 18px;
+    }
+
+    .welcome h1 {
+        font-size: 60px;
     }
 
     #navbar a {
